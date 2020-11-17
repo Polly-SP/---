@@ -1,0 +1,20 @@
+<h3>Редактирование покупки</h3>
+
+
+<form [formGroup] = "buyEditForm" (ngSubmit)="onEditBuy(id)">
+    <div class="container">
+        <br> <h4>Название</h4> <br>
+        <div class="col-6"> 
+            <input type="text" class="form-control" formControlName="name" placeholder="Название"> 
+        </div> 
+        <br><br> <h4>Количество</h4> <br>
+        <div class="col-6">
+            <input type="text" class="form-control" formControlName="kolvo" placeholder="Количество"> 
+        </div> <br>
+    </div>
+
+    <button class="btn btn-success" [disabled]="buyEditForm.invalid">Сохранить</button>
+    <button class="btn btn-warning" (click)="onRemoveBuy(id)">Удалить</button>
+
+
+</form>

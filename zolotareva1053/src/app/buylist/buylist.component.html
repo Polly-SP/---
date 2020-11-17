@@ -1,0 +1,28 @@
+<div class="row" style="margin-top: 10px;">
+
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">Название    <button type="button" class="btn btn-dark" (click)="onSorts()">⇄</button></th>
+            <th scope="col">Количество</th>
+            <th scope="col">Действие</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr *ngFor="let buy of buys" [ngStyle]="{'background-color': buy.status == '0' ? 'aquamarine' : 'white' }">
+            <th scope="row">{{buy.id}}</th>
+            <td>{{buy.name}}</td>
+            <td>{{buy.kolvo}}</td>
+            <td><button type="button" class="btn btn-info" [routerLink]="['/editbuy', buy.id]">Edit</button>  
+                <button type="button" style="margin-left: 10%;" class="btn btn-warning" (click)="onEditStatus(buy.id,buy.status)">Status</button></td>
+         </tr>
+
+
+          
+        </tbody>
+      </table>
+
+
+  </div>
